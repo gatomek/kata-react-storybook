@@ -1,5 +1,7 @@
 # Kata React Storybook
 
+Kata project to develop and maintain skills.
+
 ## Kata
 - 🛠️ creating storybook for different levels of ui (atoms, molecules, organisms, templates, pages)
 - publishing the storybook on github pages
