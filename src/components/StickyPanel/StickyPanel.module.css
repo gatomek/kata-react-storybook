@@ -1,0 +1,17 @@
+.panel {
+    border: 1px solid black;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: whitesmoke;
+    color: #fff;
+    padding: 12px 20px;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end
+}
+
+.active {
+    background: lightyellow;
+}
