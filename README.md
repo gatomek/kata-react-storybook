@@ -1,5 +1,4 @@
-# kata-react-storybook
-Kata React Storybook
+# Kata React Storybook
 
 ## Kata
 - 🛠️ creating storybook for different levels of ui (atoms, molecules, organisms, templates, pages)
