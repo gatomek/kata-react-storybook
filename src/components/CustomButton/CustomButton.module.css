@@ -1,0 +1,57 @@
+.button {
+    margin: 5px;
+    border-width: 1px;
+    padding: 5px 15px;
+}
+
+.fullLine {
+    width: calc(100% - 10px);
+}
+
+.error {
+    background-color: lightpink;
+    border: 1px solid red;
+    color: red;
+}
+
+.info {
+    background-color: lightgreen;
+    border: 1px solid Green;
+    color: Green;
+}
+
+.warning {
+    background-color: lightyellow;
+    border: 1px solid Orange;
+    color: Orange;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.icon {
+    width: 15px;
+    height: 15px;
+    padding-right: 5px;
+}
+
+.radius {
+    border-radius: 10px;
+}
+
+.small {
+    height: 1.5rem;
+}
+
+.medium {
+    height: 2rem;
+}
+
+.large {
+    height: 3rem;
+}
+
+.disabled {
+    opacity: 0.5;
+}

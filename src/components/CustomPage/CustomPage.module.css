@@ -1,0 +1,16 @@
+.page {
+    flex: 1 1 auto;        /* grows to fill remaining vertical space */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sectionContent {
+    flex: 1;
+    padding: 20px;
+    width: 100%;
+}
+
+.flexEnd {
+    display: flex;
+    justify-content: flex-end
+}
