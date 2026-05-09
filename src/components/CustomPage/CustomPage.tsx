@@ -4,13 +4,13 @@ import {useState} from "react";
 import {StickyPanel} from "../StickyPanel/StickyPanel.tsx";
 
 export function CustomPage() {
-    const [edition, setEdition] = useState<boolean>(false);
+    const [isEditing, setIsEditing] = useState<boolean>(false);
 
     return (
         <main className={styles.page}>
             <div className={styles.sectionContent}>
                 <div className={styles.flexEnd}>
-                    <CustomButton onClick={() => setEdition(true)} disabled={edition} radius>
+                    <CustomButton onClick={() => setIsEditing(true)} disabled={isEditing} radius>
                         Edit
                     </CustomButton>
                 </div>
@@ -64,7 +64,7 @@ export function CustomPage() {
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>
             </div>
-            <StickyPanel edition={edition} setEdition={setEdition}/>
+            <StickyPanel edition={isEditing} setEdition={setIsEditing}/>
         </main>
     )
 }

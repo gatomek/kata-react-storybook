@@ -1,13 +1,13 @@
 import styles from "./CustomButton.module.css";
 import reactLogo from '../../assets/react.svg'
-import type {CustomButtonProps, Mode, Size} from "./CustomBotton.types";
+import type {CustomButtonProps, Mode, Size} from "./CustomButton.types";
 
 const getStyleFromSize = (size: Size): string => {
-    if (size == 'large') {
+    if (size === 'large') {
         return styles.large;
     }
 
-    if (size == 'small') {
+    if (size === 'small') {
         return styles.small;
     }
 
@@ -23,7 +23,7 @@ const getStyleFromMode = (mode: Mode): string => {
         return styles.warning;
     }
 
-    if (mode == 'info') {
+    if (mode === 'info') {
         return styles.info;
     }
 
@@ -55,7 +55,7 @@ export default function CustomButton(props: Readonly<CustomButtonProps>) {
         .filter(Boolean)
         .join(' ');
 
-    const iconImg = icon && <img src={reactLogo} className={styles.icon} alt="Logo"/>;
+    const iconImg = icon && <img src={reactLogo} className={styles.icon} alt="Logo" aria-hidden/>;
 
     return (
         <button
