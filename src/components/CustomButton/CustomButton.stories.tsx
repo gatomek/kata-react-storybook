@@ -284,7 +284,7 @@ export const AllSizeButtonsStory: Story = {
 };
 
 export const AllModeButtonsStory: Story = {
-    name: "All modes.",
+    name: "All modes",
     parameters: {
         layout: 'centered',
         docs: {
