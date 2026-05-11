@@ -6,7 +6,7 @@ const meta = {
     title: 'Atoms/CustomButton',
     component: CustomButton,
     parameters: {
-        layout: 'fullscreen',
+        layout: 'centered',
         docs: {
             description: {
                 component: "Konfigurowany przycisk ogólnego przeznaczenia."
@@ -15,6 +15,7 @@ const meta = {
     },
     tags: ['autodocs'],
     args: {
+        children: 'Button',
         size: 'medium',
         mode: 'normal',
         fullLine: false,
@@ -69,7 +70,6 @@ export const StandardButtonStory: Story = {
                 story: 'Standard button.'
             }
         }
-
     }
 };
 
@@ -80,13 +80,55 @@ export const FullLineButtonStory: Story = {
         fullLine: true
     },
     parameters: {
+        layout: 'fullscreen',
         docs: {
             description: {
                 story: 'Full line button.'
             }
         }
-
     }
+};
+
+export const FullLineButtonStory2: Story = {
+    name: 'Full Line Button (2)',
+    args: {
+        children: 'Full Line (2)',
+        fullLine: true
+    },
+    parameters: {
+        layout: "padded",
+        docs: {
+            description: {
+                story: 'Full line button (2).'
+            }
+        }
+    }
+};
+
+export const FullLineButtonStory3: Story = {
+    name: 'Full Line Button (3)',
+    args: {
+        children: 'Full Line (3)',
+        fullLine: true
+    },
+    parameters: {
+        docs: {
+            description: {
+                story: 'Full line button (3).'
+            }
+        }
+    },
+    decorators: [
+        (Story) => (
+            <div
+                style={{
+                    minWidth: '500px'
+                }}
+            >
+                <Story />
+            </div>
+        )
+    ]
 };
 
 export const ErrorButtonStory: Story = {
@@ -101,7 +143,6 @@ export const ErrorButtonStory: Story = {
                 story: 'Error button.'
             }
         }
-
     }
 };
 
@@ -117,7 +158,6 @@ export const WarningButtonStory: Story = {
                 story: 'Warning button.'
             }
         }
-
     }
 };
 
@@ -133,7 +173,6 @@ export const InfoButtonStory: Story = {
                 story: 'Info button.'
             }
         }
-
     }
 };
 
@@ -149,7 +188,6 @@ export const BoldButtonStory: Story = {
                 story: 'Bold button.'
             }
         }
-
     }
 };
 
@@ -165,7 +203,6 @@ export const DisabledButtonStory: Story = {
                 story: 'Disabled button.'
             }
         }
-
     }
 };
 
@@ -181,7 +218,6 @@ export const ReactIconButtonStory: Story = {
                 story: 'Button with custom icon.'
             }
         }
-
     }
 };
 
@@ -197,7 +233,6 @@ export const RadiusIconButtonStory: Story = {
                 story: 'Button with rounded (10px) corners.'
             }
         }
-
     }
 };
 
@@ -213,7 +248,6 @@ export const SmallButtonStory: Story = {
                 story: 'Small size button.'
             }
         }
-
     }
 };
 
@@ -229,7 +263,6 @@ export const MediumButtonStory: Story = {
                 story: 'Medium size button.'
             }
         }
-
     }
 };
 
@@ -245,7 +278,6 @@ export const LargeButtonStory: Story = {
                 story: 'Large size button.'
             }
         }
-
     }
 };
 
@@ -260,7 +292,6 @@ export const ClickableButtonStory: Story = {
                 story: 'Button with action onClick.'
             }
         }
-
     }
 };
 
@@ -293,7 +324,6 @@ export const AllModeButtonsStory: Story = {
             }
         }
     },
-    args: {},
     render: (args) => (
         <>
             <CustomButton {...args} mode={"normal"}>Normal</CustomButton>

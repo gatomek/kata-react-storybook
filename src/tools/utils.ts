@@ -3,7 +3,7 @@ export function add(a: number, b: number) {
     return a + b;
 }
 
-export function subtrack(a: number, b: number) {
+export function subtract(a: number, b: number) {
     return a - b;
 }
 

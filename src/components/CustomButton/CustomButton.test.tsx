@@ -1,20 +1,47 @@
-import {describe, expect, it} from 'vitest';
-import { render, screen } from '@testing-library/react';
+import {describe, expect, it, vi} from 'vitest';
+import {render, screen} from '@testing-library/react';
 import CustomButton from "./CustomButton.tsx";
+import userEvent from '@testing-library/user-event';
 
-// test suite
-describe('Custom_Button_Tests', () => {
+describe('Custom Button Tests', () => {
 
-    // test case 1
-    it("test 1", () => {
-        render( <CustomButton>Test</CustomButton>);
-        expect(screen.getByText( "Test")).toBeInTheDocument();
-        // expect(true).toBe(true);
+    it("czy przycisk zawiera prawidłowy tekst", () => {
+        render(<CustomButton>Test1</CustomButton>);
+        const button = screen.getByRole('button', {name: 'Test1'});
+        expect(button).toBeInTheDocument();
+        expect(button).toBeVisible();
+        expect(button).toBeEnabled();
     })
 
-    // test case 2
-    it( "test 2", () => {
-        expect( false).toBe( false);
+    it("czy przycisk jest nieaktywny", () => {
+        render(<CustomButton disabled>Test2</CustomButton>);
+        const button = screen.getByRole('button', {name: 'Test2'});
+        expect(button).toBeInTheDocument();
+        expect(button).toBeVisible();
+        expect(button).toBeDisabled();
     })
 
+    it("czy przycisk obsługuje pojedyncze kliknięcie", async () => {
+        const user = userEvent.setup();
+        const onClick = vi.fn();
+
+        render(<CustomButton onClick={onClick}>Test3</CustomButton>);
+        const button = screen.getByRole('button', {name: 'Test3'});
+
+        await user.click(button);
+
+        expect(onClick).toHaveBeenCalled();
+    })
+
+    it("czy przycisk obsługuje podwójne kliknięcie", async () => {
+        const user = userEvent.setup();
+        const onClick = vi.fn();
+
+        render(<CustomButton data-testid='cbid0' onClick={onClick}>Test4</CustomButton>);
+        const button = screen.getByTestId('cbid0');
+
+        await user.dblClick(button);
+
+        expect(onClick).toHaveBeenCalledTimes(2);
+    })
 })
