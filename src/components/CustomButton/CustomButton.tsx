@@ -41,17 +41,19 @@ export default function CustomButton(props: Readonly<CustomButtonProps>) {
         icon,
         size = 'medium',
         onClick,
+        className,
         ...rest
     } = props;
 
-    const classNameSet = [
+    const cn = [
         styles.button,
         fullLine && styles.fullLine,
         getStyleFromMode(mode),
         bold && styles.bold,
         radius && styles.radius,
         disabled && styles.disabled,
-        getStyleFromSize(size)
+        getStyleFromSize(size),
+        className
     ]
         .filter(Boolean)
         .join(' ');
@@ -60,7 +62,7 @@ export default function CustomButton(props: Readonly<CustomButtonProps>) {
 
     return (
         <button
-            className={classNameSet}
+            className={cn}
             onClick={onClick}
             {...(disabled && {disabled: true})}
             {...rest}

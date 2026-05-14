@@ -3,12 +3,16 @@ import type {CustomFooterProps} from "./CustomFooter.types.ts";
 
 export function CustomFooter(props: Readonly<CustomFooterProps>) {
     const {
-        label
+        children,
+        className,
+        ...rest
     } = props;
 
+    const cn = [styles.header, className].filter(Boolean).join(' ');
+
     return (
-        <footer className={styles.footer}>
-            {label}
+        <footer className={cn} {...rest}>
+            {children}
         </footer>
     )
 }
