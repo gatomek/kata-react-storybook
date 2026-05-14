@@ -6,11 +6,9 @@ import {CustomPage} from "./components/CustomPage/CustomPage.tsx";
 function App() {
     return (
         <>
-            <CustomHeader title={'Kata React Storybook'}/>
-
+            <CustomHeader>Kata React Storybook</CustomHeader>
             <CustomPage/>
-
-            <CustomFooter label={'MyCompany@2026'}/>
+            <CustomFooter>MyCompany@2026</CustomFooter>
         </>
     )
 }

@@ -3,12 +3,16 @@ import type {CustomHeaderProps} from "./CustomHeader.types.ts";
 
 export function CustomHeader(props: Readonly<CustomHeaderProps>) {
     const {
-        title
+        children,
+        className,
+        ...rest
     } = props;
 
+    const cn = [styles.header, className].filter(Boolean).join(' ');
+
     return (
-        <header className={styles.header}>
-            {title}
+        <header className={cn} {...rest}>
+            {children}
         </header>
     )
 }
