@@ -40,7 +40,8 @@ export default function CustomButton(props: Readonly<CustomButtonProps>) {
         radius,
         icon,
         size = 'medium',
-        onClick
+        onClick,
+        ...rest
     } = props;
 
     const classNameSet = [
@@ -62,6 +63,7 @@ export default function CustomButton(props: Readonly<CustomButtonProps>) {
             className={classNameSet}
             onClick={onClick}
             {...(disabled && {disabled: true})}
+            {...rest}
         >
             {iconImg}
             {children}

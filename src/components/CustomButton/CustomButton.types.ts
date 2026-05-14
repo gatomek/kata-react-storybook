@@ -1,11 +1,10 @@
-import type {ReactNode} from "react";
+import type {HTMLAttributes, ReactNode} from "react";
 
 export type Mode = 'normal' | 'error' | 'warning' | 'info';
 export type Size = 'small' | 'medium' | 'large';
 
-
-export interface CustomButtonProps {
-    children?: ReactNode;
+export interface CustomButtonProps extends HTMLAttributes<HTMLButtonElement>{
+    children: ReactNode;
     fullLine?: boolean;
     mode?: Mode;
     bold?: boolean;
@@ -13,5 +12,4 @@ export interface CustomButtonProps {
     radius?: boolean;
     icon?: 'react';
     size?: Size;
-    onClick?: () => void;
 }
