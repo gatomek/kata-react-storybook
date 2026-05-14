@@ -8,7 +8,7 @@ export function CustomFooter(props: Readonly<CustomFooterProps>) {
         ...rest
     } = props;
 
-    const cn = [styles.header, className].filter(Boolean).join(' ');
+    const cn = [styles.footer, className].filter(Boolean).join(' ');
 
     return (
         <footer className={cn} {...rest}>
